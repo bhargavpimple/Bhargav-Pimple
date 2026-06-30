@@ -1,0 +1,382 @@
+:root {
+  --bg:#07111f;
+  --panel:rgba(16,24,40,.82);
+  --panel-border:rgba(255,255,255,.10);
+  --text:#eef3ff;
+  --muted:#a7b6d6;
+  --accent:#55d6c2;
+  --accent2:#7c9cff;
+  --accent3:#ffd166;
+  --shadow:0 24px 60px rgba(0,0,0,.28);
+}
+
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; }
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(124,156,255,.22), transparent 28%),
+    radial-gradient(circle at top right, rgba(85,214,194,.16), transparent 24%),
+    linear-gradient(180deg, #07111f 0%, #0b1324 100%);
+  min-height:100vh;
+}
+a { color:inherit; text-decoration:none; }
+.wrap { max-width:1180px; margin:0 auto; padding:28px 20px 60px; }
+.nav {
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  margin-bottom:22px;
+}
+.brand { font-weight:800; letter-spacing:.2px; font-size:18px; }
+.navlinks { display:flex; gap:10px; flex-wrap:wrap; }
+.navlinks a {
+  padding:10px 14px; border:1px solid var(--panel-border); border-radius:12px;
+  background:rgba(16,24,40,.52);
+}
+.hero, .card {
+  background:var(--panel);
+  border:1px solid var(--panel-border);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+.hero { padding:34px; overflow:hidden; position:relative; }
+.hero::after {
+  content:""; position:absolute; inset:auto -120px -120px auto; width:260px; height:260px;
+  background:radial-gradient(circle, rgba(85,214,194,.22), transparent 65%);
+  pointer-events:none;
+}
+.grid { display:grid; gap:18px; grid-template-columns:repeat(12,1fr); margin-top:18px; }
+.card { padding:22px; }
+.half { grid-column:span 6; }
+.full { grid-column:1/-1; }
+.small { grid-column:span 4; }
+.kicker {
+  display:inline-flex; gap:8px; align-items:center;
+  padding:8px 12px; border-radius:999px;
+  background:rgba(85,214,194,.12); border:1px solid rgba(85,214,194,.25);
+  color:#c7fff8; font-size:13px; margin-bottom:14px;
+}
+h1 { margin:0 0 10px; font-size:54px; line-height:1.02; letter-spacing:-.8px; }
+h2 { margin:0 0 12px; font-size:26px; letter-spacing:-.2px; }
+p { margin:0 0 12px; color:#d6def2; line-height:1.7; }
+.meta { color:var(--muted); font-size:14px; }
+.btnrow { display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
+.btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:13px 18px; border-radius:14px; font-weight:700;
+  border:1px solid transparent;
+}
+.btn.primary { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#06101d; }
+.btn.secondary { background:rgba(255,255,255,.04); border-color:var(--panel-border); }
+.pills { display:flex; flex-wrap:wrap; gap:10px; }
+.pill {
+  padding:9px 12px; border-radius:999px; background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08); color:#edf2ff; font-size:13px;
+}
+.list { padding-left:18px; margin:10px 0 0; }
+.list li { margin:10px 0; color:#dbe4f9; }
+.filebox {
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  padding:16px; border-radius:18px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+  margin-top:12px;
+}
+.filebox strong { display:block; margin-bottom:4px; }
+.filebox span { color:var(--muted); font-size:14px; }
+.badge {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border-radius:999px;
+  background:rgba(255,209,102,.12); border:1px solid rgba(255,209,102,.22);
+  color:#ffe8a3; font-size:13px;
+}
+.footer { margin-top:18px; color:var(--muted); font-size:14px; }
+
+@media (max-width: 900px) {
+  h1 { font-size:40px; }
+  .half, .small { grid-column:1/-1; }
+  .nav { flex-direction:column; align-items:flex-start; }
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bhargav Pimple | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Bhargav Pimple</div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="kicker">Environmental Engineer • Sustainability Consulting</div>
+      <h1>Building sustainable solutions with technical depth.</h1>
+      <p>
+        Environmental Engineer with experience in chemical engineering, ESG, carbon credits,
+        wastewater treatment, and solid waste management. Focused on sustainability-oriented
+        problem solving, technical analysis, and practical environmental solutions.
+      </p>
+      <div class="btnrow">
+        <a class="btn primary" href="documents.html">View Documents</a>
+        <a class="btn secondary" href="contact.html">Contact Me</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card half">
+        <div class="badge">Current Role</div>
+        <h2>Experience</h2>
+        <p>Environmental Engineer, EBP India (05/2025 - Present)</p>
+      </div>
+
+      <div class="card half">
+        <div class="badge">Education</div>
+        <h2>Academic Background</h2>
+        <p>B.Tech/B.E. Chemical, Dwarkadas J Sanghvi College of Engineering, 2024 (7.81/10)</p>
+      </div>
+
+      <div class="card full">
+        <div class="badge">Core Skills</div>
+        <h2>What I work with</h2>
+        <div class="pills">
+          <span class="pill">Chemical Engineering</span>
+          <span class="pill">Environmental Engineering</span>
+          <span class="pill">ESG</span>
+          <span class="pill">Carbon Credits</span>
+          <span class="pill">Wastewater Treatment</span>
+          <span class="pill">Solid Waste Management</span>
+          <span class="pill">SQL</span>
+        </div>
+      </div>
+
+      <div class="card half">
+        <div class="badge">Projects</div>
+        <h2>Selected training</h2>
+        <ul class="list">
+          <li>Understanding P&amp;ID and its function and use in industry, including drafting in AutoCAD.</li>
+          <li>Textile Chemicals: learned how undergraduate subjects apply to chemical processing plants.</li>
+          <li>In Plant Training Report: technical skills, communication, discipline, management, teamwork.</li>
+        </ul>
+      </div>
+
+      <div class="card half">
+        <div class="badge">Languages</div>
+        <h2>Communication</h2>
+        <p>English, Marathi, Hindi</p>
+        <p class="meta">Designed to feel premium, modern, and recruiter-friendly.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bhargav Pimple | Documents</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Bhargav Pimple</div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="kicker">Documents • Upload Certificates</div>
+      <h1>Central document hub for recruiters.</h1>
+      <p>
+        Keep your resume, certificates, and experience letters in one clean place.
+        Add new files anytime without changing the design.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card full">
+        <div class="badge">Upload Certificates</div>
+        <h2>Resume</h2>
+        <div class="filebox">
+          <div>
+            <strong>Resume_Bhargav.pdf</strong>
+            <span>Upload your latest resume here.</span>
+          </div>
+          <a class="btn primary" href="assets/Resume_Bhargav.pdf" target="_blank">Open File</a>
+        </div>
+      </div>
+
+      <div class="card half">
+        <div class="badge">Certificates</div>
+        <h2>Certificate 1</h2>
+        <div class="filebox">
+          <div>
+            <strong>Add certificate PDF</strong>
+            <span>Use this slot for your first certificate.</span>
+          </div>
+          <a class="btn secondary" href="assets/certificate-1.pdf" target="_blank">Open File</a>
+        </div>
+      </div>
+
+      <div class="card half">
+        <div class="badge">Certificates</div>
+        <h2>Certificate 2</h2>
+        <div class="filebox">
+          <div>
+            <strong>Add certificate PDF</strong>
+            <span>Use this slot for your second certificate.</span>
+          </div>
+          <a class="btn secondary" href="assets/certificate-2.pdf" target="_blank">Open File</a>
+        </div>
+      </div>
+
+      <div class="card full">
+        <div class="badge">Experience Letters</div>
+        <h2>Work records</h2>
+        <div class="filebox">
+          <div>
+            <strong>Experience Letter 1</strong>
+            <span>Add your first experience letter.</span>
+          </div>
+          <a class="btn secondary" href="assets/experience-letter-1.pdf" target="_blank">Open File</a>
+        </div>
+        <div class="filebox">
+          <div>
+            <strong>Experience Letter 2</strong>
+            <span>Add another employment or internship letter.</span>
+          </div>
+          <a class="btn secondary" href="assets/experience-letter-2.pdf" target="_blank">Open File</a>
+        </div>
+      </div>
+
+      <div class="card full">
+        <div class="badge">Admin Friendly</div>
+        <h2>Add more sections later</h2>
+        <p>
+          This page can be connected to a CMS so an admin can add more document entries or
+          extra sections without changing the page layout.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bhargav Pimple | Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Bhargav Pimple</div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="kicker">Contact • Recruiter Ready</div>
+      <h1>Get in touch.</h1>
+      <p>
+        Use the details below for job applications, recruiter calls, and professional networking.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card half">
+        <div class="badge">Email</div>
+        <h2>Direct contact</h2>
+        <p>bhargavpimple2@gmail.com</p>
+        <a class="btn primary" href="mailto:bhargavpimple2@gmail.com">Send Email</a>
+      </div>
+
+      <div class="card half">
+        <div class="badge">Phone</div>
+        <h2>Call / WhatsApp</h2>
+        <p>(+91) 9145349887</p>
+      </div>
+
+      <div class="card full">
+        <div class="badge">LinkedIn</div>
+        <h2>Professional profile</h2>
+        <p><a href="https://www.linkedin.com/in/bhargav-pimple" target="_blank">linkedin.com/in/bhargav-pimple</a></p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="none">
+  <link rel="cms-config-url" href="/admin/config.yml" type="text/yaml">
+  <title>Portfolio Admin</title>
+</head>
+<body>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+</body>
+</html>
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "content/home.json"
+        label: "Home Content"
+        name: "home"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Headline", name: "headline", widget: "string"}
+          - {label: "Summary", name: "summary", widget: "text"}
+          - {label: "Current Role", name: "current_role", widget: "string"}
+          - {label: "Education", name: "education", widget: "string"}
+
+  - name: "documents"
+    label: "Documents"
+    folder: "content/documents"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["resume", "certificate", "experience_letter", "other"]}
+      - {label: "File Name", name: "file_name", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+
+  - name: "sections"
+    label: "Extra Sections"
+    folder: "content/sections"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Section Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  
